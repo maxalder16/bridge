@@ -1,0 +1,144 @@
+
+.costsWrap {
+	padding: 0 @gutter_width;
+}
+
+.costs {
+	.container;
+
+	h3 {
+		text-align: center;
+		margin: 0 0 55px;
+	}
+}
+
+.costsFlex {
+	.flex;
+
+	.costBubbleWrap {
+		.flexWidth(calc(100% / 3));
+		padding: 0 8px;
+		margin: 0 0 32px;
+	}
+
+	.costTotalWrap {
+		.costBubbleWrap;
+	}
+
+	.costButtonWrap {
+		.costBubbleWrap;
+		.flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.costBubbleStyle(@check: "true", @hover: "true") {
+	min-height: 72px;
+	background: #fff;
+	padding: 20px 15px;
+	border-radius: 1000px;
+	box-shadow: 0px 3px 6px fade(#000, 15%);
+	.flex;
+	align-items: center;
+
+
+    & when (@hover = "true") {
+		cursor: pointer;
+
+	    &:hover {
+	    	.bubbleActive;
+	    }
+	}
+
+    & when (@check = "true") {
+
+		&:before {
+			content: "";
+			width: 32px;
+			height: 32px;
+			background: url("../../images/icons/check-circle.svg") center no-repeat;
+			background-size: contain;
+			margin-right: 10px;
+		}
+    }
+
+    &.active {
+	    .bubbleActive;
+    }
+
+	h5 {
+		.flexStretch;
+		font-weight: 400;
+		margin: 0;
+		font-size: 16px;
+		line-height: 16px;
+		text-align: center;
+		color: @secondary_colour;
+	}
+
+	h4 {
+		.flexStretch;
+		font-weight: 700;
+		margin: 0;
+		font-size: 16px;
+		line-height: 20px;
+		color: @secondary_colour;
+	}
+
+	.totalAmount {
+		.flexWidth(auto);
+		font-size: 28px;
+		line-height: 16px;
+		color: @primary_colour;
+		margin-left: 10px;
+	}
+
+	.estimate {
+		.flexWidth(auto);
+		text-align: center;
+		margin-left: 10px;
+
+		.estimateText {
+			font-weight: 700;
+			font-size: 12px;
+			line-height: 15px;
+			text-transform: uppercase;
+			color: @secondary_colour_light;
+		}
+
+		.estimateValue {
+			font-size: 12px;
+			line-height: 15px;
+			color: @secondary_colour;
+		}
+	}
+}
+
+.bubbleActive {
+	background: @secondary_colour;
+
+	&:before {
+		filter: brightness(1000%);
+	}
+
+	h5, h4 {
+		color: #fff;
+	}
+
+	.estimate {
+
+		.estimateValue {
+			color: #fff;
+		}
+	}
+}
+
+.costBubble {
+	.costBubbleStyle;
+}
+
+.totalBubble {
+	.costBubbleStyle("false", "false");
+	padding: 20px 25px;
+}

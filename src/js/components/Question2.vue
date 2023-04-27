@@ -1,6 +1,6 @@
 <template>
     <div v-cloak class="questionWrap">
-        <div>
+        <div class="question">
             Question 2 goes here
             <button @click="nextStage">Continue</button>
             <button @click="prevStage">Back</button>
@@ -21,11 +21,11 @@ export default {
     methods: {
         nextStage(){
             this.currentStage = "question_3";
-            this.$emit('callEvent', this.currentStage);
+            this.$emit('updateStage', this.currentStage);
         },
         prevStage(){
             this.currentStage = "question_1";
-            this.$emit('callEvent', this.currentStage);
+            this.$emit('updateStage', this.currentStage);
         }
     },
 };

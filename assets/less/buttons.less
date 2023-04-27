@@ -1,0 +1,22 @@
+
+.nextButton {
+	background: @primary_colour;
+	color: #fff;
+	border: none;
+	font-size: 16px;
+	line-height: 20px;
+	display: inline-flex;
+	align-items: center;
+	padding: 10px 12px;
+	border-radius: 1000px;
+	cursor: pointer;
+
+	&:after {
+		content: "";
+		width: 28px;
+		height: 28px;
+		background: url("../../images/icons/arrow-circle.svg") center no-repeat;
+		background-size: contain;
+		margin-left: 5px;
+	}
+}

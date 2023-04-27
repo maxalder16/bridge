@@ -1,9 +1,360 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  font-family: 'Inter', sans-serif;
+}
+h3 {
+  font-size: 24px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  font-weight: 500;
+  color: #DB2F20;
+  text-transform: uppercase;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flexStretch {
+  flex: 1 1 0;
+  min-width: 1px;
+}
+.beforeFill,
+.afterFill {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.nextButton {
+  background: #DB2F20;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 1000px;
+  cursor: pointer;
+}
+.nextButton:after {
+  content: "";
+  width: 28px;
+  height: 28px;
+  background: url("../../images/icons/arrow-circle.svg") center no-repeat;
+  background-size: contain;
+  margin-left: 5px;
+}
 html {
   width: 100%;
+  height: 100%;
   max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+div {
+  display: block;
+  width: 100%;
 }
 img {
   width: 100%;
   height: auto;
   max-width: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 20px;
+}
+.mainContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.mainContent:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../../images/background.png") center no-repeat;
+  background-size: cover;
+  filter: blur(9px);
+  -webkit-filter: blur(9px);
+  transform: scale(1.05);
+}
+.mainContent:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.65);
+  z-index: 1;
+}
+.mainContent .appWrap {
+  position: relative;
+  z-index: 2;
+}
+.costsWrap {
+  padding: 0 30px;
+}
+.costs {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.costs h3 {
+  text-align: center;
+  margin: 0 0 55px;
+}
+.costsFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.costsFlex .costBubbleWrap {
+  flex: 0 0 calc(100% / 3);
+  width: calc(100% / 3);
+  max-width: calc(100% / 3);
+  padding: 0 8px;
+  margin: 0 0 32px;
+}
+.costsFlex .costTotalWrap {
+  flex: 0 0 calc(100% / 3);
+  width: calc(100% / 3);
+  max-width: calc(100% / 3);
+  padding: 0 8px;
+  margin: 0 0 32px;
+}
+.costsFlex .costButtonWrap {
+  flex: 0 0 calc(100% / 3);
+  width: calc(100% / 3);
+  max-width: calc(100% / 3);
+  padding: 0 8px;
+  margin: 0 0 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.bubbleActive {
+  background: #5F259F;
+}
+.bubbleActive:before {
+  filter: brightness(1000%);
+}
+.bubbleActive h5,
+.bubbleActive h4 {
+  color: #fff;
+}
+.bubbleActive .estimate .estimateValue {
+  color: #fff;
+}
+.costBubble {
+  min-height: 72px;
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 1000px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  cursor: pointer;
+}
+.costBubble:hover {
+  background: #5F259F;
+}
+.costBubble:hover:before {
+  filter: brightness(1000%);
+}
+.costBubble:hover h5,
+.costBubble:hover h4 {
+  color: #fff;
+}
+.costBubble:hover .estimate .estimateValue {
+  color: #fff;
+}
+.costBubble:before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  background: url("../../images/icons/check-circle.svg") center no-repeat;
+  background-size: contain;
+  margin-right: 10px;
+}
+.costBubble.active {
+  background: #5F259F;
+}
+.costBubble.active:before {
+  filter: brightness(1000%);
+}
+.costBubble.active h5,
+.costBubble.active h4 {
+  color: #fff;
+}
+.costBubble.active .estimate .estimateValue {
+  color: #fff;
+}
+.costBubble h5 {
+  flex: 1 1 0;
+  min-width: 1px;
+  font-weight: 400;
+  margin: 0;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #5F259F;
+}
+.costBubble h4 {
+  flex: 1 1 0;
+  min-width: 1px;
+  font-weight: 700;
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: #5F259F;
+}
+.costBubble .totalAmount {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: auto;
+  font-size: 28px;
+  line-height: 16px;
+  color: #DB2F20;
+  margin-left: 10px;
+}
+.costBubble .estimate {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: auto;
+  text-align: center;
+  margin-left: 10px;
+}
+.costBubble .estimate .estimateText {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #C7B3DD;
+}
+.costBubble .estimate .estimateValue {
+  font-size: 12px;
+  line-height: 15px;
+  color: #5F259F;
+}
+.totalBubble {
+  min-height: 72px;
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 1000px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 25px;
+}
+.totalBubble.active {
+  background: #5F259F;
+}
+.totalBubble.active:before {
+  filter: brightness(1000%);
+}
+.totalBubble.active h5,
+.totalBubble.active h4 {
+  color: #fff;
+}
+.totalBubble.active .estimate .estimateValue {
+  color: #fff;
+}
+.totalBubble h5 {
+  flex: 1 1 0;
+  min-width: 1px;
+  font-weight: 400;
+  margin: 0;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #5F259F;
+}
+.totalBubble h4 {
+  flex: 1 1 0;
+  min-width: 1px;
+  font-weight: 700;
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: #5F259F;
+}
+.totalBubble .totalAmount {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: auto;
+  font-size: 28px;
+  line-height: 16px;
+  color: #DB2F20;
+  margin-left: 10px;
+}
+.totalBubble .estimate {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: auto;
+  text-align: center;
+  margin-left: 10px;
+}
+.totalBubble .estimate .estimateText {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #C7B3DD;
+}
+.totalBubble .estimate .estimateValue {
+  font-size: 12px;
+  line-height: 15px;
+  color: #5F259F;
 }

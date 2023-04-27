@@ -1,0 +1,30 @@
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flexWidth(@width) {
+	flex: 0 0 @width;
+	width: @width;
+	max-width: @width;
+}
+
+.flexStretch {
+	flex: 1 1 0;
+	min-width: 1px;
+}
+
+.beforeFill, .afterFill {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.container {
+	max-width: @container_width;
+	margin: 0 auto;
+}
