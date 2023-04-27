@@ -6,6 +6,7 @@
             <question2 :stage="stage" v-if="this.stage == 'question_2'" @updateStage="updateStage"></question2>
             <question3 :stage="stage" v-if="this.stage == 'question_3'" @updateStage="updateStage"></question3>
             <results :stage="stage" v-if="this.stage == 'results'" @updateStage="updateStage"></results>
+            <complete v-if="this.stage == 'complete'"></complete>
         </div>
     </div>
 </template>
@@ -16,6 +17,7 @@ import Question1 from './Question1.vue';
 import Question2 from './Question2.vue';
 import Question3 from './Question3.vue';
 import Results from './Results.vue';
+import Complete from './Complete.vue';
 
 export default {
     data() {
@@ -95,7 +97,8 @@ export default {
         Question1,
         Question2,
         Question3,
-        Results
+        Results,
+        Complete
     }
 };
 </script>
