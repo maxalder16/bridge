@@ -1,11 +1,9 @@
 import '../../assets/css/main.css';
 
-console.log('Hello, world 2!');
-
 import Vue from 'vue';
-import TestComponent from './components/TestComponent.vue';
+import App from './components/App.vue';
 
-Vue.component('test-component', TestComponent);
+Vue.component('app', App);
 
 new Vue({
   el: '#app',
